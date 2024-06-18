@@ -116,10 +116,11 @@ class DDPM(torch.nn.Module):
 
     def _losses(
         self,
-        epsilon_pred: torch.FloatTensor,
-        epsilon: torch.FloatTensor,
+        epsilon_pred: torch.FloatTensor, # shape [N, dims]
+        epsilon: torch.FloatTensor, # shape [N, dims]
     ) -> torch.FloatTensor:
-        # Compute the squared error between the predicted and true noise
+        # TO DO: Compute the squared error between the predicted and true noise
+        # Expected output shape [N]. 
         raise NotImplementedError
 
     def losses(
