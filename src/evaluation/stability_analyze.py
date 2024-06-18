@@ -1,6 +1,6 @@
 import numpy as np
 from . import bond_analyze
-from probai.src.data.mini_qm9 import DATASET_INFO
+from probai24.src.data.mini_qm9 import DATASET_INFO
 
 ############################
 # Stability and bond analysis
