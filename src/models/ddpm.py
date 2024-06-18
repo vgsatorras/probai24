@@ -224,6 +224,18 @@ class DDPM(torch.nn.Module):
         context: Optional[torch.FloatTensor] = None, 
     ) -> torch.FloatTensor:
         # mean of the distribution p(z_{t-1} | z_t)
+        # get beta, alpha, and alpha_bar, all broadcasted to the same shape as x
+        beta = broadcast_like(self.betas(t), z) # shape [N, 1]
+        alpha = broadcast_like(self.alphas(t), z) # shape [N, 1]
+        alpha_bar = broadcast_like(self.alpha_bars(t), z) # shape [N, 1]
+
+        epsilon_pred = self.model(
+            z, t.float() / self.N, edge_index=edge_index, batch=batch, context=context
+        ) # shape [N, dims]
+
+        # TO DO: Use the ingredients above to compute the mean 
+        # Expected shape for mean is [N, dims]
+
         raise NotImplementedError
 
     def _p_std(
