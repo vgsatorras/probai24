@@ -1,4 +1,4 @@
-from torch_geometric.utils.scatter import scatter
+from torch_geometric.utils import scatter
 import torch
 
 
