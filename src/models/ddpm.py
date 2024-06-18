@@ -85,7 +85,9 @@ class DDPM(torch.nn.Module):
         z: torch.FloatTensor, # shape [N, dims] # N being num_samples*num_nodes (num_nodes=1 for the toy dataset)
         t: torch.LongTensor, # shape [N]
     ) -> torch.FloatTensor:
-        # mean of the distribution q(z_t | z_0)
+        # TO DO: Implement mean of the distribution q(z_t | z_0)
+        # Expected output shape [N, dims]. 
+        # Tip: Use the method broadcast_like(sqrt_alpha_bars, z) before multiplying sqrt_alpha_bars with z.
         raise NotImplementedError
 
     def _q_std(
@@ -93,7 +95,9 @@ class DDPM(torch.nn.Module):
         z: torch.FloatTensor, # shape [N, dims] 
         t: torch.LongTensor, # shape [N]
     ) -> torch.FloatTensor:
-        # std of the distribution q(z_t | z_0)
+        # TO DO: std of the distribution q(z_t | z_0)
+        # Expected output shape [N, dims]. 
+        # Tip: Use the method broadcast_like() to broadcast the stds from [N] to [N, dims].
         raise NotImplementedError
 
     def q_sample(
