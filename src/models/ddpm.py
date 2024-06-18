@@ -96,8 +96,8 @@ class DDPM(torch.nn.Module):
         t: torch.LongTensor, # shape [N]
     ) -> torch.FloatTensor:
         # TO DO: std of the distribution q(z_t | z_0)
-        # Expected output shape [N, dims]. 
-        # Tip: Use the method broadcast_like() to broadcast the stds from [N] to [N, dims].
+        # Expected output shape [N, 1]. 
+        # Tip: Use the method broadcast_like() to broadcast the computed stds from [N] to [N, 1].
         raise NotImplementedError
 
     def q_sample(
