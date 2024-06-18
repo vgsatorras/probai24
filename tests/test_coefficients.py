@@ -1,8 +1,8 @@
 import pytest 
 import torch
 
-from probai.src.models.ddpm import DDPM
-from probai.src.models.gt.ddpm import DDPM as GT
+from probai24.src.models.ddpm import DDPM
+from probai24.src.models.gt.ddpm import DDPM as GT
 
 
 @pytest.mark.parametrize("N", [10, 100, 1000])
