@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import imageio
-from probai.src.evaluation import bond_analyze
-from probai.src.data.mini_qm9 import DATASET_INFO
+from probai24.src.evaluation import bond_analyze
+from probai24.src.data.mini_qm9 import DATASET_INFO
 
 
 def plot_data3d(
