@@ -1,7 +1,7 @@
-from probai.src.models.ddpm import DDPM
-from probai.src.models.utils import center_zero
-from probai.src.evaluation.stability_analyze import check_stability
-from probai.src.evaluation.visualizer import plot_data3d
+from probai24.src.models.ddpm import DDPM
+from probai24.src.models.utils import center_zero
+from probai24.src.evaluation.stability_analyze import check_stability
+from probai24.src.evaluation.visualizer import plot_data3d
 from typing import Tuple
 from torch_geometric.loader import DataLoader
 import torch
