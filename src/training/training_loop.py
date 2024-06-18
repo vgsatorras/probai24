@@ -2,8 +2,8 @@ import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from probai.src.data.data import DataBatch
-from probai.src.models.ddpm import DDPM
+from probai24.src.data.data import DataBatch
+from probai24.src.models.ddpm import DDPM
 
 
 # Basic ML training loop
