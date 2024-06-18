@@ -147,7 +147,7 @@ class DDPM(torch.nn.Module):
         """        
         # In case we also have diffuse/denoise h, we concatenate it to x
         if h is not None:
-            # z will be the concatenation of both x and h.
+            # TO DO: z will be the concatenation of both x and h on the second axis.
             raise NotImplementedError
         else:
             z = x
