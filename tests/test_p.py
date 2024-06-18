@@ -51,7 +51,7 @@ def ddpm_gt_gnn(model_gnn: torch.nn.Module) -> GT:
 
 def test_mean(ddpm: DDPM, ddpm_gt: GT, ddpm_gnn: DDPM, ddpm_gt_gnn: GT):
     
-    z = torch.ones(2, 1)
+    z = torch.ones(2, 5)
     t = torch.ones(2, dtype=torch.long)
     edge_index = 2
     batch = 3
