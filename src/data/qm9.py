@@ -1,7 +1,7 @@
 from torch.utils.data import DataLoader
-from probai.src.data.qm9_cormorant.args import init_argparse
-from probai.src.data.qm9_cormorant.collate import PreprocessQM9
-from probai.src.data.qm9_cormorant.utils import initialize_datasets
+from probai24.src.data.qm9_cormorant.args import init_argparse
+from probai24.src.data.qm9_cormorant.collate import PreprocessQM9
+from probai24.src.data.qm9_cormorant.utils import initialize_datasets
 
 
 def retrieve_dataloaders(
