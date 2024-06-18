@@ -49,14 +49,24 @@ class DDPM(torch.nn.Module):
             Tuple[torch.FloatTensor, torch.FloatTensor, torch.FloatTensor]: 
                 betas, alphas, alpha_bars
         """        
-        
-        # If type is "linear", then:
-        #     set the betas to be linearly spaced between beta_min=0.0001 and beta_max=0.02
-        # If type is "cosine", then:
-        #     set alpha_bars using the cosine schedule, and then computing alphas and betas
-        #     accordingly
-        
-        raise NotImplementedError
+        if type == "linear":
+            # TO DO: 
+            # Set the betas to be linearly spaced between beta_min=0.0001 and beta_max=0.02
+            # Set the alphas and alpha_bars accordingly
+            raise NotImplementedError
+        elif type == "cosine":
+            # setting alpha_bars using the cosine schedule, and then computing alphas and betas
+            # accordingly
+            def cos2(t, s=0.001):
+                return torch.cos((t / N + s) / (1 + s) * np.pi / 2) ** 2
+
+            alpha_bars = cos2(torch.arange(N)) / cos2(torch.zeros(1))
+            alphas = torch.cat([alpha_bars[:1], alpha_bars[1:] / alpha_bars[:-1]])
+            betas = 1 - alphas
+
+            assert torch.allclose(alpha_bars, torch.cumprod(alphas, dim=0))
+
+        return betas, alphas, alpha_bars
 
 
     def betas(self, t: torch.LongTensor) -> torch.FloatTensor:
