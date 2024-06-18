@@ -70,7 +70,7 @@ def test_mean(ddpm: DDPM, ddpm_gt: GT, ddpm_gnn: DDPM, ddpm_gt_gnn: GT):
     
 def test_std(ddpm: DDPM, ddpm_gt: GT):
     
-    z = torch.ones(2, 1)
+    z = torch.ones(2, 5)
     t = torch.ones(2, dtype=torch.long)
     assert torch.allclose(ddpm._p_std(z, t), ddpm_gt._p_std(z, t)), (
         "_q_std is incorrectly implemented"
