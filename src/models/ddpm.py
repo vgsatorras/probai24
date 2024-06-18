@@ -228,11 +228,13 @@ class DDPM(torch.nn.Module):
 
     def _p_std(
         self,
-        z: torch.FloatTensor, # shape [N, dims]
-        t: torch.LongTensor, # shape [N]
+        z: torch.FloatTensor,
+        t: torch.LongTensor,
     ) -> torch.FloatTensor:
         # std of the distribution p(z_{t-1} | z_t)
-        raise NotImplementedError
+        # sigma^2 = beta
+        beta = broadcast_like(self.betas(t), z)
+        return torch.sqrt(beta)
 
     @property
     def device(self) -> torch.device:
